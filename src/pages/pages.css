@@ -1,0 +1,64 @@
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.fond{
+    background-image: url(../assets/images/hero-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+main .fond h1{
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+main .fond h2{
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+.section-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 12px;
+    gap: 20px;
+    width: 80%;
+    justify-self: center;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.a-propos, .mes-competences{
+    width: 50%;
+}
+
+.a-propos h2, .mes-competences h2{
+    font-size: 2rem;
+    margin-bottom: 25px;
+    font-weight: bold;
+    border-bottom: solid 4px rgb(86, 86, 244);
+    padding-bottom: 12px;
+}
+.a-propos img{
+    width: 100%;
+    height: auto;
+}
+
+.competence-list li{
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    
+}
