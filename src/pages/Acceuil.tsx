@@ -1,13 +1,26 @@
 import johnDoe from "../assets/images/john-doe-about.jpg"
 import "./pages.css"
+import Users from "../components/Modale"
+import { useEffect, useState } from "react"
 function Home() {
     const jdimage = johnDoe
+    useEffect(() => {
+        document.title = "Acceuil - John Doe";
+    }, []);
+
+    const [showModal, setShowModal] = useState(false);
+
     return(
         <main>
+           
+            {showModal && (<div className="overley bg-dark"><Users onClose={()=>{setShowModal(false)}}/></div>)}
+            
             <div className="fond">
                 <h1>Bonjour, je suis John Doe</h1>
                 <h2>Developpeur web full stack</h2>
-                <button className="btn btn-danger"> en savoir plus</button>
+                <button className="btn btn-danger" onClick={() => setShowModal(true)}>
+                    en savoir plus
+                    </button>
             </div>
             <div className="section-info">
                 <div className="a-propos">
