@@ -12,7 +12,7 @@ main .overley{
     left: 50vw;
     transform: translate(-50%, -50%);
     width: 42%;
-    
+    height: auto;
     z-index: 99;
     border-radius: 8px;
 }
@@ -53,15 +53,15 @@ main .fond h2{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.a-propos, .mes-competences{
+.a-propos, .mes-competences, .info-de-contact, .formulaire{
     width: 50%;
 }
 
-.a-propos h2, .mes-competences h2{
+.a-propos h2, .mes-competences h2, .info-de-contact h2, .formulaire h2{
     font-size: 2rem;
     margin-bottom: 25px;
     font-weight: bold;
-    border-bottom: solid 4px rgb(86, 86, 244);
+    border-bottom: solid 4px rgba(9, 42, 255, 0.953);
     padding-bottom: 12px;
 }
 .a-propos img{
@@ -73,4 +73,122 @@ main .fond h2{
     font-size: 1.2rem;
     margin-bottom: 15px;
     
+}
+
+
+/*CONTACT*/
+
+.col-auto{
+    display: flex;
+    justify-content: center;
+}
+
+main .titre-de-page{
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+main .sous-titre{
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    
+}
+.separator{
+    width: 30%;
+    height: 6px;
+    border: none;
+    margin-bottom: 70px;
+}
+.nom-de-profil{
+    font-size: 1.2em;
+    font-weight: 500;
+    
+}
+
+
+/*SERVICES*/
+
+.list-de-service{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 50px;
+}
+.service{
+    width: 30%;
+    height: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    border: solid 1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.bi{
+    margin-bottom: 30px;
+}
+
+/*REALISATIONS*/
+.mes-realisations{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.realisation{ 
+    width: 30%;
+    height: 495px;
+    border-radius: 8px;
+    border: solid 1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+.image-realisation{
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.footer-realisation{
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    border-top: solid 1px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    width: 100%;
+    font-size: 0.9rem;
+    background-color: rgba(78, 76, 76, 0.077);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.realisation:hover{ 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: rgba(78, 76, 76, 0.077);
+}
+
+/*MENTIONS LEGALES*/
+.accordion{
+    width: 80%;
+    margin: 0 auto 50px auto;
+}
+
+
+@media (max-width: 720px){
+    .section-info, .list-de-service, .mes-realisations{
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+    .service{
+    width: 45%;
+    }
 }

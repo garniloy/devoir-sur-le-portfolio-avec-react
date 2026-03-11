@@ -1,66 +1,86 @@
-import { useEffect, useState } from "react";
+import { useEffect  } from "react";
+import {useImmer} from "use-immer"
 import "./modale.css"
-import johnDoe from "../assets/images/john-doe-about.jpg"
 
 
-function Users({onClose}: {onClose: () => void}) {
-  const jdimage = johnDoe
-  const [users, setUsers] = useState([{name:"", id:0}]);
+function Users({onClose}: { onClose: () => void }) {
+const [user, setUser] = useImmer({name:"",
+location:"",bio:"",
+public_repos:0,
+followers:0,
+following:0
+});
 
   useEffect(() => {
 
-    fetch("https://api.github.com/users/github-john-doe")
-      .then(res => res.json())
-      .then(data => setUsers(data));
+    async function fetchUser() {
+      try {
+        const response = await fetch("https://api.github.com/users/github-john-doe");
+        const data = await response.json();
 
-  }, []);
+        setUser(draft => {
+          draft.name = data.name;
+          draft.location = data.location;
+          draft.bio = data.bio;
+          draft.public_repos = data.public_repos;
+          draft.followers = data.followers;
+          draft.following = data.following;
+        });
 
-  return (
-    <div className="modal-overlay text-white">
-      <div className="modal-container">
+      } catch (error) {
+        console.error("Erreur lors du fetch :", error);
+      }
+    }
 
-        <div className="modal-header">
-          <p>Mon profil GitHub</p>
-          <button className="header-close" onClick={onClose}>✕</button>
-        </div>
+    fetchUser();
 
-        <div className="modal-body">
-          <img className="modal-body-item profile-picture" src={jdimage} alt="Profile Picture" />
-          <div className="modal-body-item details-info">
+  }, [setUser]);
 
-            <div className="details-items">
-              <i className="bi bi-person fs-6"></i>
-              <span>{users[0]?.name || ""}</span>
-            </div>
-            <div className="details-items">
-              <i className="bi bi-map fs-6"></i>
-              <span>{users[0]?.name || "Utilisateur non trouvé"}</span>
-            </div>
-            <div className="details-items">
-              <i className="bi bi-people fs-6"></i>
-              <span>{users[0]?.name || "Utilisateur non trouvé"}</span>
-            </div>
-            <div className="details-items">
-              <i className="bi bi-box fs-6"></i>
-              <span> Repository : {users[0]?.name || "Utilisateur non trouvé"}</span>
-            </div>
-            <div className="details-items">
-              <i className="bi bi-people fs-6"></i>
-              <span> Followers : {users[0]?.name || "Utilisateur non trouvé"}</span>
-            </div>
-            <div className="details-items">
-              <i className="bi bi-people fs-6"></i>
-              <span> Following : {users[0]?.name || "Utilisateur non trouvé"}</span>
-            </div>
-
+  return(
+    <div className="modale-box text-white">
+      <div className="modale-header">
+        <p>Mon profil GitHub</p>
+        <button className="btnferhea text-white" onClick={onClose}>
+          X
+        </button>
+      </div>
+      <div className="modale-body">
+        <img src="https://avatars.githubusercontent.com/u/19842736?v=4" alt="photo de profil" className="photo-profil" />
+        <div className="details-du-profil">
+          <div className="elt-detail">
+            <i className="bi bi-person"/>
+            <span> {user.name}</span>
+          </div>
+          <div className="elt-detail">
+            <i className="bi bi-geo-alt"/>
+            <span> {user.location}</span>
+          </div>
+          <div className="elt-detail">
+            <i className="bi bi-card-text"/>
+            <span> {user.bio}</span>
+          </div>
+          <div className="elt-detail">
+            <i className="bi bi-box"/>
+            <span> Repositories : {user.public_repos}</span>
+          </div>
+          <div className="elt-detail">
+            <i className="bi bi-people"/>
+            <span> Followers : {user.followers}</span>
+          </div>
+          <div className="elt-detail">
+            <i className="bi bi-people"/>
+            <span> Following : {user.following}</span>
           </div>
         </div>
-        <div className="modal-footer">
-          <button className="close-bton" onClick={onClose}>close</button>
-        </div>
+      </div>
+      <div className="modale-footer">
+        <button  className="bbtnferfoo text-white" onClick={onClose}>
+          Fermer
+        </button>
       </div>
     </div>
-  );
+  )
+
 }
 
 export default Users

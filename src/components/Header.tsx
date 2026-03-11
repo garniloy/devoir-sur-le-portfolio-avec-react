@@ -10,7 +10,7 @@ function Header() {
           jonh doe
         </NavLink>
 
-        {/* Hamburger button */}
+        
         <button
           className="navbar-toggler"
           type="button"
@@ -20,15 +20,15 @@ function Header() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Collapsible menu */}
+        
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
 
             <li className="nav-item">
               <NavLink
-                to="/"
+                to="/"myactive-link
                 className={({ isActive }) =>
-                  "touppercase nav-link " + (isActive ? "text-warning" : "text-white")
+                  "touppercase nav-link " + (isActive ? "text-white fw-bold text-decoration-underline " : "text-white")
                 }
               >
                 home
@@ -39,7 +39,7 @@ function Header() {
               <NavLink
                 to="/services"
                 className={({ isActive }) =>
-                  "touppercase nav-link " + (isActive ? "text-warning" : "text-white")
+                  "touppercase nav-link " + (isActive ? "text-white fw-bold text-decoration-underline" : "text-white")
                 }
               >
                 services
@@ -50,7 +50,7 @@ function Header() {
               <NavLink
                 to="/realisations"
                 className={({ isActive }) =>
-                  "touppercase nav-link " + (isActive ? "text-warning" : "text-white")
+                  "touppercase nav-link " + (isActive ? "text-white fw-bold text-decoration-underline" : "text-white")
                 }
               >
                 portfolio
@@ -61,7 +61,7 @@ function Header() {
               <NavLink
                 to="/contact"
                 className={({ isActive }) =>
-                  "touppercase nav-link " + (isActive ? "text-warning" : "text-white")
+                  "touppercase nav-link " + (isActive ? "text-white fw-bold text-decoration-underline " : "text-white")
                 }
               >
                 contact
@@ -72,7 +72,7 @@ function Header() {
               <NavLink
                 to="/mentions"
                 className={({ isActive }) =>
-                  "touppercase nav-link " + (isActive ? "text-warning" : "text-white")
+                  "touppercase nav-link " + (isActive ? "text-white fw-bold text-decoration-underline " : "text-white")
                 }
               >
                 mentions légales

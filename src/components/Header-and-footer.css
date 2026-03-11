@@ -1,6 +1,10 @@
 .touppercase {
     text-transform: uppercase;
 }
+.nav-item:hover{
+    text-decoration: underline white 1px solid;   
+}
+
 
 /*Footer*/
 
@@ -13,6 +17,18 @@ footer{
     padding-bottom: 50px;
     padding-left: 200px;
 }
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    padding-top: 28px;
+    padding-bottom: 50px;
+    padding-left: 200px;
+}
+
+
 .footer-col-title{
     font-weight: bold;
     font-size: 1.2em;
@@ -22,6 +38,9 @@ footer{
     margin-bottom: 4px;
     font-size: 1em;
     text-decoration: none;
+}
+.footer-col-item:hover{
+    font-weight: bold;
 }
 .social-network{
     margin-top: 12px;
@@ -37,4 +56,18 @@ footer{
     display: flex;
     flex-direction: column;
 
+}
+.rea-col{
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 720px){
+    footer{
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right: 20px;
+        gap: 30px;
+        
+    }
 }

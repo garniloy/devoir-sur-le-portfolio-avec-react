@@ -33,14 +33,14 @@ function Footer() {
                     <Link to="/mentions" className="text-white footer-col-item">Mentions légales</Link>
                 </div>
             </div>
-            <div className="col">
-                <p className="footer-col-title">Mes réalisations</p>
-                <p className="footer-col-item">Fresh Food</p>
-                <p className="footer-col-item">Restaurant Akira</p>
-                <p className="footer-col-item">Espace bien-etre</p>
-                <p className="footer-col-item">SEO</p>
-                <p className="footer-col-item">Creation d'une API</p>
-                <p className="footer-col-item">Maquette d'un site</p>
+            <div className="col rea-col">
+                <p className="footer-col-title text-white">Mes réalisations</p>
+                <Link to="/realisations" className="footer-col-item text-white">Fresh Food</Link>
+                <Link to="/realisations" className="footer-col-item text-white">Restaurant Akira</Link>
+                <Link to="/realisations" className="footer-col-item text-white">Espace bien-etre</Link>
+                <Link to="/realisations" className="footer-col-item text-white">SEO</Link>
+                <Link to="/realisations" className="footer-col-item text-white">Creation d'une API</Link>
+                <Link to="/realisations" className="footer-col-item text-white">Maquette d'un site</Link>
             </div>
             
         </footer>
